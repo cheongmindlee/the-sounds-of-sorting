@@ -8,14 +8,20 @@ import java.util.List;
  */
 public class CopyEvent<T> implements SortEvent<T> {
 
-    //Instantiate variables
+    // Instantiate variables
     private T value;
     private int i;
 
-    public CopyEvent(T value, int i){
+    /**
+     * the value being copied and the index of the value
+     * @param value value being copied
+     * @param i index of value
+     */
+    public CopyEvent(T value, int i) {
         this.value = value;
         this.i = i;
     }
+
     @Override
     public void apply(T[] arr) {
         arr[i] = value;
@@ -32,5 +38,5 @@ public class CopyEvent<T> implements SortEvent<T> {
     public boolean isEmphasized() {
         return true;
     }
-    
+
 }
